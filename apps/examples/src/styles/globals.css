@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --global-brand-10: #effdec;
+    --global-brand-100: #041302;
+    --global-brand-20: #bef8b4;
+    --global-brand-30: #aef6a2;
+    --global-brand-40: #9ef58f;
+    --global-brand-50: #8ef37c;
+    --global-brand-60: #77f061;
+    --global-brand-70: #3dea1f;
+    --global-brand-80: #26a810;
+    --global-brand-90: #155d09;
+}
