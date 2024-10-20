@@ -1,7 +1,7 @@
 {
   "name": "@borabaloglu/ui",
   "description": "A React component library based on radix and shadcn ui.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "exports": {

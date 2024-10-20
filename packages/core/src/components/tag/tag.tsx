@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "@components/button";
 import { cn } from "@utils/component.util";
 import { TagInputProps, type Tag as TagType } from "@components/tag/tag-input";
 
@@ -96,17 +95,15 @@ export const Tag: React.FC<TagProps> = ({
       disabled={disabled}
     >
       {tagObj.text}
-      <button
-        type="button"
+      <span
         onClick={(e) => {
           e.stopPropagation(); // Prevent event from bubbling up to the tag span
           onRemoveTag(tagObj.id);
         }}
         className={cn("flex items-center p-1 h-full")}
-        disabled={disabled}
       >
         <X size={16} />
-      </button>
+      </span>
     </button>
   );
 };

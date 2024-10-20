@@ -107,8 +107,8 @@ function SortableItem({ children, id }: PropsWithChildren<SortablItemProps>) {
 const SortableDragHandler = React.forwardRef<
   HTMLButtonElement,
   React.ButtonHTMLAttributes<HTMLButtonElement>
->(({ className, ...props }) => {
-  const { attributes, listeners, ref } = useSortableContext();
+>(({ className, ...props }, ref) => {
+  const { attributes, listeners, ref: activatorRef } = useSortableContext();
 
   return (
     <button
@@ -119,7 +119,7 @@ const SortableDragHandler = React.forwardRef<
       {...attributes}
       {...listeners}
       {...props}
-      ref={ref}
+      ref={ref ?? activatorRef}
     />
   );
 });

@@ -30,8 +30,9 @@ TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 const TooltipArrow = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Arrow>,
   React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Arrow>
->(({ className, ...props }) => (
+>(({ className, ...props }, ref) => (
   <TooltipPrimitive.Arrow
+    ref={ref}
     className={cn("fill-semantic-border-subtle", className)}
     {...props}
   />
