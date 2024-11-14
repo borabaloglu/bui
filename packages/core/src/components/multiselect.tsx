@@ -27,6 +27,7 @@ interface MultiSelectProps
   placeholder: string;
   className?: string;
   onValueChange: (value: string[]) => void;
+  error?: boolean;
 }
 
 const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
@@ -39,6 +40,7 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
       onValueChange,
       disabled,
       placeholder,
+      error,
       ...props
     },
     ref
@@ -84,7 +86,11 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
           <button
             ref={ref}
             {...props}
-            className="flex w-full items-center justify-between gap-x-4 rounded-md border border-semantic-border-subtle bg-semantic-bg-canvas px-3 py-2 min-h-10 text-label-sm text-semantic-fg-base focus:outline-none focus:border-semantic-accent-moderate disabled:cursor-not-allowed disabled:border-semantic-border-disabled disabled:bg-semantic-bg-disabled disabled:text-semantic-fg-disabled [&>span]:line-clamp-1 hover:border-semantic-border-muted focus-visible:shadow-focus-accent placeholder:text-semantic-fg-subtle focus-visible:outline-none focus-visible:border-semantic-accent-moderate disabled:placeholder-semantic-fg-disabled"
+            className={cn(
+              "flex w-full items-center justify-between gap-x-4 rounded-md border border-semantic-border-subtle bg-semantic-bg-canvas px-3 py-2 min-h-10 text-label-sm text-semantic-fg-base focus:outline-none focus:border-semantic-accent-moderate disabled:cursor-not-allowed disabled:border-semantic-border-disabled disabled:bg-semantic-bg-disabled disabled:text-semantic-fg-disabled [&>span]:line-clamp-1 hover:border-semantic-border-muted focus-visible:shadow-focus-accent placeholder:text-semantic-fg-subtle focus-visible:outline-none focus-visible:border-semantic-accent-moderate disabled:placeholder-semantic-fg-disabled",
+              error &&
+                "!text-semantic-fg-error !border-semantic-border-error bg-semantic-bg-error focus-visible:border-semantic-border-error"
+            )}
           >
             {selectedValues.length > 0 ? (
               <div className="flex flex-1 flex-wrap items-center gap-2">
